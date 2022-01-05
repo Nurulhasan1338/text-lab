@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/text-lab/static/css/main.073c9b0a.css",
+    "main.js": "/text-lab/static/js/main.c07c7551.js",
+    "static/js/787.855d930d.chunk.js": "/text-lab/static/js/787.855d930d.chunk.js",
+    "index.html": "/text-lab/index.html",
+    "main.073c9b0a.css.map": "/text-lab/static/css/main.073c9b0a.css.map",
+    "main.c07c7551.js.map": "/text-lab/static/js/main.c07c7551.js.map",
+    "787.855d930d.chunk.js.map": "/text-lab/static/js/787.855d930d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.c07c7551.js"
+  ]
+}
