@@ -63,7 +63,7 @@ function App() {
 
       <Alert alert={alert}/>
 
-      <div className=" w-75 p-3 container ">
+      <div className=" w-90 p-3 container ">
 
           <Textform heading="Text Analyzer" mode={mode} shAlert={showAlert}/>
           {/* <About/> */}
