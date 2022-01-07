@@ -13,8 +13,13 @@ import Alert from "./components/Alert";
 function App() {
   const [mode, setmode] = useState("light");
   const [alert, setalert] = useState(null);
- 
+  // const [code, setcode] = useState(1);
+const [stylo, setstylo] = useState({
+  navbarColor : "#d5dde9",
+  bodyColor : "white",
+  btColor : "primary"
 
+})
 
   const showAlert=(message,type)=>{
     setalert({
@@ -25,33 +30,59 @@ function App() {
       setalert(null);
     }, 1400);
   }
+ 
 
-  const toggle=()=>{
-    if(mode==="dark"){
-    setmode("light");
-    document.body.style.backgroundColor = "white";
-    showAlert("dark mode","success")  }
-  
-  else{
-    setmode("dark")
-    document.body.style.backgroundColor = "#16191c";
-    showAlert("dark mode","success");
-       }
-  // setcode(cod);
-
-  //      switch (code) {
-  //       case 2:
-  //         setmode("light");
+  const toggle=(cod)=>{
+      //   if(code===1){
+  //   setmode("light");
   //   document.body.style.backgroundColor = "white";
-  //         break;
-  //       case 1:
-  //         setmode("dark")
+  //   showAlert("light mode enabled","success")  }
+  
+  // else{
+  //   setmode("dark")
   //   document.body.style.backgroundColor = "#16191c";
-  //         break;
-  //       default:
-  //         setmode("dark")
-  //         document.body.style.backgroundColor = "#16191c";
-  //     }
+  //   showAlert("dark mode enabled","success");
+  //      }
+  
+
+       switch (cod) {
+
+        case 1:
+          setmode("light");
+         document.body.style.backgroundColor = "white";
+         setstylo({
+          navbarColor : "#d5dde9",
+          bodyColor : "white",
+          btColor : "success"
+        })
+          break;
+
+        case 2:
+          setmode("dark")
+         document.body.style.backgroundColor = "#16191c";
+         setstylo({
+           navbarColor : "rgb(31 35 50 / 90%)",
+           bodyColor : "#16191c",
+           btColor : "warning"
+         })
+          break;
+
+        case 3: 
+          setmode("light");
+         document.body.style.backgroundColor = "white";
+         setstylo({
+           navbarColor : "#5adcff",
+           bodyColor : "white",
+           btColor : "primary"
+         })
+          break;
+
+
+        default:
+          setmode("dark")
+          document.body.style.backgroundColor = "#16191c";
+
+      }
        
 
   }
@@ -59,13 +90,13 @@ function App() {
 
   return (
     <>
-      <Navbar title="Text Lab" mode={mode} toggleMode={toggle} shAlert={showAlert}/>
+      <Navbar title="Text Lab" mode={mode} toggleMode={toggle} shAlert={showAlert} styls={stylo}/>
 
       <Alert alert={alert}/>
 
       <div className=" w-90 p-3 container ">
 
-          <Textform heading="Text Analyzer" mode={mode} shAlert={showAlert}/>
+          <Textform heading="Text Analyzer" mode={mode} shAlert={showAlert} styls={stylo}/>
           {/* <About/> */}
 
       </div>
@@ -75,3 +106,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
