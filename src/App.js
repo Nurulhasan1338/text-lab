@@ -1,11 +1,16 @@
 'Use strict';
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import React, { useState } from 'react'
 
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
+import {
+  BrowserRouter as Router,
+  Route, 
+  Routes                 
+} from "react-router-dom";
 
 
 
@@ -90,17 +95,21 @@ const [stylo, setstylo] = useState({
 
   return (
     <>
+    <Router>
+       
       <Navbar title="Text Lab" mode={mode} toggleMode={toggle} shAlert={showAlert} styls={stylo}/>
 
       <Alert alert={alert}/>
 
       <div className=" w-90 p-3 container ">
-
-          <Textform heading="Text Analyzer" mode={mode} shAlert={showAlert} styls={stylo}/>
-          {/* <About/> */}
+      <Routes> 
+        <Route path='/text-lab/' exact element={<Textform heading="Text Analyzer" mode={mode} shAlert={showAlert} styls={stylo}/>}/>
+        <Route path='/text-lab/About' exact element={<About/>}/>
+      </Routes>
 
       </div>
-
+      
+     </Router>
    </>
   );
 }
