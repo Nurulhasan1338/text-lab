@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route, 
   Routes                 
 } from "react-router-dom";
